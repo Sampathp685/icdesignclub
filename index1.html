@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IC Design Club</title>
+    <body>
+        <!-- Video Background -->
+        <div class="video-background">
+           <video autoplay muted loop>
+               <source src="video.mp4" type="video/mp4">
+               <!-- Add other formats if needed -->
+              <!-- <source src="your-video.webm" type="video/webm">-->
+           </video>
+       </div>
+       <div class="login-container">
+           <form id="loginForm">
+               <label for="username">Username:</label>
+               <input type="text" id="username" name="username" required>
+               
+               <label for="password">Password:</label>
+               <input type="password" id="password" name="password" required>
+               
+               <button type="submit">Submit</button>
+           </form>
+       </div>
+       
+   
+       <script>
+           // Listen for form submission
+           document.getElementById('loginForm').addEventListener('submit', function(event) {
+               event.preventDefault();  // Prevent the form from submitting the traditional way
+               
+               // Get the form data
+               const username = document.getElementById('username').value;
+               const password = document.getElementById('password').value;
+   
+               // Store the data in localStorage
+               localStorage.setItem('username', username);
+               localStorage.setItem('password', password); // Optional, but don't store passwords in plain text
+               
+               // Redirect to homepage
+               window.location.href = 'homepage1.html';
+           });
+       </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="x.png" alt="IC Design Club ">
+    </header>
+
+    <div class="container">
+        <div class="section" id="about-us">
+            <h2>About Us</h2>
+            <p>The IC Design Club is dedicated to fostering interest and skills in integrated circuit design among students and professionals. Our club focuses on providing hands-on workshops, expert talks, and collaborative projects that enhance practical understanding and experience in the field.</p>
+        </div>
+
+        <div class="section" id="events">
+            <h2>Our Events</h2>
+            <p>We host a variety of events including design challenges, seminars with industry experts, and interactive workshops. These events are tailored to both beginners and advanced enthusiasts in IC design to help them expand their knowledge and network.</p>
+        </div>
+
+
+    </div>
+</body>
+</html>
